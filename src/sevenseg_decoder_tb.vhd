@@ -93,11 +93,22 @@ begin
             assert w_out = "0000000" report "error on 8" severity failure;
         w_in <=  "1001";wait for 10 ns;
             assert w_out = "0011000" report "error on 9" severity failure;
+        w_in <=  "1010";wait for 10 ns;
+            assert w_out = "0001000" report "error on A" severity failure;
+        w_in <=  "1011";wait for 10 ns;
+            assert w_out = "0000011" report "error on b" severity failure;
+        w_in <=  "1100";wait for 10 ns;
+            assert w_out = "0100111" report "error on c" severity failure;
+        w_in <=  "1101";wait for 10 ns;
+            assert w_out = "0100001" report "error on d" severity failure;
+        w_in <=  "1110";wait for 10 ns;
+            assert w_out = "0000110" report "error on E" severity failure;
         w_in <=  "1111";wait for 10 ns;
-            assert w_out = "1111111" report "error on other" severity failure;
+            assert w_out = "0001110" report "error on F" severity failure;
         wait; -- wait forever
     
     end process;
+
 
 
 end test_bench;
